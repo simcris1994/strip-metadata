@@ -2,7 +2,10 @@ module strip-metadata
 
 go 1.17
 
-require github.com/gin-gonic/gin v1.7.4
+require (
+	github.com/gin-gonic/gin v1.7.4
+	github.com/snapas/img v0.0.0-20211017065052-f3c0e344ffb6
+)
 
 require (
 	github.com/gin-contrib/sse v0.1.0 // indirect
