@@ -1,10 +1,6 @@
 package main
 
 import (
-	"fmt"
-	"log"
-	"net/http"
-
 	"github.com/gin-gonic/gin"
 )
 
@@ -17,11 +13,13 @@ func main() {
 }
 
 func upload(c *gin.Context) {
+	// fetch file
 	file, _ := c.FormFile("file")
-	log.Println(file.Filename)
 
+	// save file
 	dest := "./images/" + file.Filename
 	c.SaveUploadedFile(file, dest)
 
-	c.String(http.StatusOK, fmt.Sprintf("'%s' uploaded!", file.Filename))
+	// return file
+	c.File(dest)
 }
