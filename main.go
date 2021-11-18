@@ -22,8 +22,8 @@ func upload(c *gin.Context) {
 	file, _ := c.FormFile("file")
 
 	// save file
-	dest := "./images/" + file.Filename
-	strippedDest := "./images/stripped_" + file.Filename
+	dest := file.Filename
+	strippedDest := "stripped_" + file.Filename
 	c.SaveUploadedFile(file, dest)
 
 	// call processing module to strip the image of exif data
