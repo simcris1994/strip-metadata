@@ -14,7 +14,7 @@ func main() {
 
 	router.POST("/upload", upload)
 
-	router.Run("localhost:8080")
+	router.Run()
 }
 
 func upload(c *gin.Context) {
