@@ -37,5 +37,6 @@ func upload(c *gin.Context) {
 	defer os.Remove(strippedDest)
 
 	// return file
+	c.Header("Access-Control-Allow-Origin", "*")
 	c.File(strippedDest)
 }
